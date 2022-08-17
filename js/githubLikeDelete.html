@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">
+        It is a Heading.click Delete button to erase.
+    </h1>
+    <div>
+        <input id="input-text" type="text" placeholder="Type 'delete to remove heading">
+        <button id="btn-delete" disabled>Delete</button>
+    </div>
+    <script>
+        document.getElementById('input-text').addEventListener('keyup',function(event){
+            const confirm=event.target.value
+            const delete_btn=document.getElementById('btn-delete')
+            if(confirm==='delete'){
+                delete_btn.removeAttribute('disabled')
+            }
+            else{
+                delete_btn.setAttribute('disabled',true)
+            }
+        })
+
+
+
+
+        document.getElementById('btn-delete').addEventListener('click',function(){
+            const Heading=document.getElementById('heading')
+            Heading.style.display='none'
+        })
+    </script>
+</body>
+</html>
